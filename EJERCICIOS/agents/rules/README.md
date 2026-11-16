@@ -48,6 +48,12 @@ Las reglas se basan en las **buenas prácticas existentes** y las **mejoras nece
 | 11 | [Validar env en startup](11-validate-env.md) | Validar variables de entorno al iniciar | project |
 | 14 | [Tests extensivos](14-testing.md) | Tests cerca del código, cubrir casos límite | project |
 
+### 📚 Documentación y Gobernanza
+
+| ID | Regla | Descripción | Scope |
+|----|-------|-------------|-------|
+| 16 | [Documentar en verificacion.md](16-document-verification.md) | Registrar cambios significativos con fecha y autoría | project |
+
 ---
 
 ## 🎯 Aplicación de Reglas

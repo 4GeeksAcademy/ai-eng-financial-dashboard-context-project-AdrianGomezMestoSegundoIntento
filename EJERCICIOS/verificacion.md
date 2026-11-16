@@ -31,3 +31,48 @@
 **Corrección aplicada**: Se realizó una auditoría completa del código analizando la estructura de carpetas, archivos y comportamientos concretos en el backend (FastAPI), frontend (React + TypeScript), Docker e infraestructura. Se documentaron 18 buenas prácticas detectadas y 17 malas prácticas identificadas, clasificadas por severidad (Crítico, Importante, Recomendado). El resultado se guardó en el archivo `Buenas-Malas-Prácticas.md` en la carpeta `/EJERCICIOS/`, proporcionando una guía clara para nuevos desarrolladores y agentes IA sobre qué hacer y qué evitar al contribuir al proyecto.
 
 ---
+
+## Tarea 5: Creación de reglas para agentes IA
+
+**Situación anterior**: Aunque existía una auditoría de buenas y malas prácticas, no había una estructura de reglas formalizadas y accesibles para que agentes IA las utilizaran de manera consistente durante el desarrollo. Los agentes no tenían guías claras sobre qué hacer en cada contexto, cómo priorizar validaciones y cuándo aplicar cada estándar.
+
+**Corrección aplicada**: Se creó un directorio completo `/EJERCICIOS/agents/` con 15 reglas formalizadas en formato estándar (Markdown con frontmatter YAML). Las reglas se organizan por categoría (Backend, Frontend, Estructura, Infraestructura, Testing) y severidad (Críticas 🔴, Importantes 🟠, Recomendadas 🟡). Cada regla incluye descripción detallada, archivos afectados (globs), ejemplos de código correcto e incorrecto, e impacto. Se proporcionó documentación de apoyo: `agents/README.md` (guía de uso), `rules/README.md` (índice completo) y `rules/SUMMARY.txt` (resumen rápido). Esta estructura permite que agentes IA carguen las reglas automáticamente, validen código generado contra ellas, y mantengan consistencia en todo el proyecto.
+
+---
+
+## Tarea 6: Creación del Memory Bank - Documentación del Producto
+
+**Situación anterior**: El proyecto carecía de documentación centralizada y estructurada sobre la descripción del producto, el stack tecnológico utilizado y el estado actual de la aplicación. Esta información estaba dispersa en archivos individuales (README, package.json, requirements.txt, código fuente) lo que dificultaba que nuevos desarrolladores y agentes IA comprendieran rápidamente qué es el proyecto, cómo está construido y cuál es su estado.
+
+**Corrección aplicada**: Se creó el directorio `/EJERCICIOS/memory-bank/` con tres documentos estructurados:
+
+**Tarea 6.1 - Descripción General del Producto** (`01-product-overview.md`)
+- Propósito educativo de la aplicación (enseñanza de desarrollo full-stack)
+- Funcionalidades actuales: 8 endpoints API, 5 componentes dashboard, mock data generation
+- Problemas que resuelve: Visualización de métricas financieras, cálculos de ganancias, alertas de gastos
+- Arquitectura y casos de uso
+- Incluye diagrama de arquitectura del sistema
+
+**Tarea 6.2 - Stack Tecnológico Completo** (`02-tech-stack.md`)
+- Enumeración detallada de todas las tecnologías (versiones explícitas)
+- Frontend: React 19.2.4, TypeScript 6.0.2, Vite 8.0.4, Tailwind CSS 4.2.2, Recharts 3.8.1
+- Backend: FastAPI 0.109.0, Uvicorn 0.27.0, Pydantic, Python 3.13
+- Infraestructura: Docker, Docker Compose
+- Testing: Vitest (frontend), Pytest (backend)
+- Ejemplos de código para cada componente principal
+- Tabla resumen y flujo de datos completo
+
+**Tarea 6.3 - Estado Actual del Producto** (`03-current-state.md`)
+- ✅ Funcionalidades operativas: 8 endpoints, dashboard completo, generación de datos mock robusta
+- ⚠️ Gaps conocidos: Falta persistencia DB, autenticación, búsqueda avanzada, paginación, caching, validación de rangos
+- 🔴 Prioridades inmediatas: Validación de entrada, restricción CORS, logging estructurado
+- 🟡 Roadmap recomendado en 4 fases (Seguridad, Calidad, Escalabilidad, Persistencia)
+- Tabla de cumplimiento con 16 reglas del proyecto
+- Cambios críticos y next steps priorizados
+
+**Ubicación**: `/EJERCICIOS/memory-bank/`
+
+**Fecha**: 2024-11-16
+**Realizado por**: Copilot - Full-Stack Agent
+
+---

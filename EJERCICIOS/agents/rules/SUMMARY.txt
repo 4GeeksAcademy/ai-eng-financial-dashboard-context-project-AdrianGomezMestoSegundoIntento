@@ -90,21 +90,27 @@ Infraestructura
      ├─ Facilita onboarding
      └─ Referencia de configuración
 
+  16-document-verification.md
+     ├─ Registrar cambios en verificacion.md
+     ├─ Incluir fecha y autoría
+     └─ Mantener trazabilidad de tareas
+
 ═══════════════════════════════════════════════════════════════════════════════
 
 📊 ESTADÍSTICAS
 
-  Total de Reglas: 15
+  Total de Reglas: 16
   ├─ Críticas 🔴:     3
   ├─ Importantes 🟠:  6
-  └─ Recomendadas 🟡: 6
+  └─ Recomendadas 🟡: 7
 
   Por Área:
   ├─ Backend:        6 reglas
   ├─ Frontend:       2 reglas
   ├─ Estructura:     4 reglas
   ├─ Infraestructura: 2 reglas
-  └─ Testing:        1 regla
+  ├─ Testing:        1 regla
+  └─ Gobernanza:     1 regla
 
 ═══════════════════════════════════════════════════════════════════════════════
 
@@ -114,9 +120,12 @@ Infraestructura
   1. Leer la regla relevante
   2. Seguir los ejemplos
   3. Validar código antes de commit
+  4. Documentar en verificacion.md si cambios significativos (Regla 16)
 
   Para Agentes IA:
   1. Cargar reglas al inicio
+  2. Consultar Regla 16 para documentación de tareas
+  3. Seguir formato de verificacion.md con fecha y autoría
   2. Validar código generado
   3. Comentar incumplimientos en PRs
 
