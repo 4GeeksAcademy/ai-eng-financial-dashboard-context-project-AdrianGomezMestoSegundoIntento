@@ -76,3 +76,67 @@
 **Realizado por**: Copilot - Full-Stack Agent
 
 ---
+
+## Tarea 7: Backend en Funcionamiento y Mapeo de Endpoints
+
+**Situación anterior**: El backend FastAPI estaba implementado pero no había una documentación clara y organizada sobre los endpoints disponibles, sus parámetros, formatos de respuesta, y cómo se relacionan con las tres funcionalidades que el proyecto requiere implementar en el frontend.
+
+**Corrección aplicada**: Se puso en funcionamiento el backend FastAPI en http://localhost:8000 y se generó documentación completa y detallada (9 archivos) que mapea todos los endpoints necesarios para las 3 funcionalidades principales:
+
+**Tarea 7.1 - Backend Operativo**
+- Backend FastAPI corriendo en http://localhost:8000
+- Todas las dependencias instaladas (fastapi, uvicorn, pydantic, etc.)
+- Swagger UI disponible en http://localhost:8000/docs
+- Health check verificado: `{"status":"ok"}`
+- 8 endpoints funcionales y probados
+
+**Tarea 7.2 - Endpoints Mapeados**
+- **Funcionalidad 1 (Filtro de Rango de Fechas)**:
+  - GET `/api/metrics/facets` - Obtiene min_date y max_date disponibles
+  - GET `/api/metrics/summary?start_date=YYYY-MM-DD&end_date=YYYY-MM-DD` - Filtra datos por período
+  
+- **Funcionalidad 2 (Tabla de Alertas de Anomalías)**:
+  - GET `/api/metrics/alerts?threshold=0.3` - Detecta gastos anómalamente altos (threshold configurable)
+  
+- **Funcionalidad 3 (Vista Comparativa B2B vs B2C)**:
+  - GET `/api/metrics/categories/top?operation_type=income&business_type=B2B` - Top 5 categorías B2B
+  - GET `/api/metrics/categories/top?operation_type=income&business_type=B2C` - Top 5 categorías B2C
+  - GET `/api/metrics/summary?business_type=B2B` - Resumen para gráfico B2B
+  - GET `/api/metrics/summary?business_type=B2C` - Resumen para gráfico B2C
+
+**Tarea 7.3 - Documentación Completa Generada** (9 archivos en `/home/codespace/.copilot/session-state/.../files/`)
+1. **00_INICIO.txt** - Punto de entrada y navegación (2 min)
+2. **START_HERE.md** ⭐ - Inicio rápido y verificación (3 min)
+3. **SUMMARY.md** - Resumen ejecutivo completo (5 min)
+4. **QUICK_REFERENCE.txt** - Tabla visual de endpoints (referencia)
+5. **ENDPOINT_MAPPING.md** - Mapeo detallado de parámetros (consulta)
+6. **REAL_RESPONSE_EXAMPLES.md** - Ejemplos reales del servidor (ejemplos)
+7. **URL_BUILDER.md** - URLs completas para cada caso (implementación)
+8. **ARCHITECTURE_FLOW.txt** - Diagramas de flujo y arquitectura (conceptual)
+9. **INDEX.md** - Índice y navegación (búsqueda)
+
+**Tarea 7.4 - Datos Capturados y Verificados**
+- Rango de fechas: 2025-11-01 a 2026-10-28
+- Categorías disponibles: 5 (administrative, operational, others, sales, suppliers)
+- Tipos de operación: income, outcome
+- Tipos de negocio: B2B, B2C
+- Alertas de anomalías: 4 períodos detectados (threshold 30%)
+- Ejemplos reales de respuestas JSON capturados del servidor
+
+**Tarea 7.5 - Documentación de Parámetros Query**
+Cada endpoint cuenta con documentación clara de:
+- Parámetros query (nombre, tipo, obligatorio/opcional, default)
+- Formato de fechas: YYYY-MM-DD (ISO 8601)
+- Rangos válidos (ej: threshold 0-∞, limit 1-20)
+- Esquemas de respuesta con tipos Pydantic
+- Casos especiales (arrays vacíos, etc.)
+
+**Ubicación de documentación**: 
+- Backend en ejecución: http://localhost:8000
+- Archivos generados: Sesión de Copilot (documentos de referencia)
+
+**Fecha**: 2026-11-16
+**Realizado por**: Copilot - Full-Stack Agent
+**Estado**: ✅ Completado y verificado
+
+---
