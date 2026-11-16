@@ -47,7 +47,7 @@ Si necesitas apuntar a otro backend, copia `frontend/.env.example` como `.env` y
 
 - Frontend: http://localhost:5173
 - Backend: http://localhost:8000
-- Documentación API: http://localhost:8000/docs
+- Documentación API: https://glorious-memory-v4j4rq4vw6rhxrwj-8000.app.github.dev/docs
 
 ---
 

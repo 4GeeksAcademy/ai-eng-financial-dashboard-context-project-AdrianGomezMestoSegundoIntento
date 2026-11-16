@@ -1,0 +1,136 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                  REGLAS DEL PROYECTO - RESUMEN RÁPIDO                      ║
+║                      Financial Dashboard Context                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📂 ESTRUCTURA
+├─ 15 reglas organizadas por categoría
+├─ Cada regla incluye: descripción, ejemplos, impacto
+├─ Formato: Markdown con frontmatter YAML
+└─ Basadas en buenas prácticas existentes + mejoras identificadas
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 REGLAS CRÍTICAS 🔴
+
+  06-cors-restrictive.md
+     ├─ Problema: CORS permite ["*"] - Riesgo CSRF
+     ├─ Solución: allow_origins específicos
+     └─ Impacto: Seguridad de API
+
+  10-no-debugger-production.md
+     ├─ Problema: Puerto 5678 expuesto - Acceso remoto
+     ├─ Solución: Debug solo en localhost/desarrollo
+     └─ Impacto: Seguridad crítica
+
+  11-validate-env.md
+     ├─ Problema: Env vars no validadas - Fallos silenciosos
+     ├─ Solución: Validar en startup
+     └─ Impacto: Fallos tempranos y claros
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚙️ REGLAS IMPORTANTES 🟠
+
+Backend
+  ├─ 03-python-type-hints.md
+  │  ├─ Tipos explícitos en Python
+  │  └─ Genera documentación Swagger
+  │
+  ├─ 04-pydantic-validation.md
+  │  ├─ BaseModel para validación
+  │  └─ Serialización JSON automática
+  │
+  └─ 05-avoid-duplicated-endpoints.md
+     ├─ NO duplicar /api/metrics/b2b y /api/metrics/b2c
+     └─ Usar query params en lugar
+
+Frontend
+  ├─ 07-typescript-strict.md
+  │  ├─ Interfaces para todos los props
+  │  └─ Type checking en compilación
+  │
+  └─ 08-api-client.md
+     ├─ Cliente HTTP centralizado (api-client.ts)
+     ├─ NO usar fetch() directamente
+     └─ Reuso y consistencia
+
+Infraestructura
+  └─ 09-pinned-versions.md
+     ├─ Fijar versiones exactas
+     ├─ Usar pip freeze / npm lock
+     └─ Builds reproducibles
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 REGLAS RECOMENDADAS 🟡
+
+  01-structure-separation.md
+     └─ Mantener /frontend y /backend independientes
+
+  02-component-modularity.md
+     ├─ /components/dashboard/ → componentes de dominio
+     └─ /components/ui/       → componentes genéricos
+
+  12-backend-logging.md
+     └─ Implementar logging con módulo logging
+
+  13-pure-functions.md
+     ├─ No modificar entrada
+     ├─ Sin estado global
+     └─ Mismo input = mismo output
+
+  14-testing.md
+     ├─ Tests junto a código (.test.ts)
+     ├─ Backend en /tests/
+     └─ Cubrir casos límite
+
+  15-env-example.md
+     ├─ Documentar variables en .env.example
+     ├─ Facilita onboarding
+     └─ Referencia de configuración
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 ESTADÍSTICAS
+
+  Total de Reglas: 15
+  ├─ Críticas 🔴:     3
+  ├─ Importantes 🟠:  6
+  └─ Recomendadas 🟡: 6
+
+  Por Área:
+  ├─ Backend:        6 reglas
+  ├─ Frontend:       2 reglas
+  ├─ Estructura:     4 reglas
+  ├─ Infraestructura: 2 reglas
+  └─ Testing:        1 regla
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 CÓMO USAR ESTAS REGLAS
+
+  Para Desarrolladores:
+  1. Leer la regla relevante
+  2. Seguir los ejemplos
+  3. Validar código antes de commit
+
+  Para Agentes IA:
+  1. Cargar reglas al inicio
+  2. Validar código generado
+  3. Comentar incumplimientos en PRs
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📖 ARCHIVOS RELACIONADOS
+
+  • README.md
+    └─ Guía completa con índice y aplicación
+
+  • Cada archivo de regla incluye:
+    ├─ Frontmatter YAML (title, description, scope, globs, application)
+    ├─ Sección "Detalles" (QUÉ hacer y QUÉ evitar)
+    ├─ Ejemplos de código (malo ❌ vs correcto ✅)
+    └─ "Impacto" (por qué importa)
+
+═══════════════════════════════════════════════════════════════════════════════
