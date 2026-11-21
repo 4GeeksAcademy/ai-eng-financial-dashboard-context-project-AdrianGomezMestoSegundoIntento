@@ -1,9 +1,8 @@
-# Agent Guidance
+# STARTUP - Leer antes de cualquier tarea
 
-Agents working on this project **must**:
+Los agentes que trabajen en este proyecto **deben siempre**:
 
-- Look for **work instructions and rules** in the directory:  
-  `./.agents/rules`
+- Buscar **rules** en el directorio:`./.agents/rules` Y aplicar todas reglas en su flujo de trabajo, siempre y cuando se requiera.
 
 - Look for available **agent skills** in the directory:  
   `./.agents/skills`
